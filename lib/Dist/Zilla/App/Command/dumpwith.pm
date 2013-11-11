@@ -59,13 +59,14 @@ sub _has_dz_role {
 sub validate_args {
   my ( $self, $opt, $args ) = @_;
   for my $arg ( @{$args} ) {
-    if ( $arg =~ /\A-(.*)\z/ ) {
+    if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
     }
     else {
       $self->_has_module($arg);
     }
   }
+  return 1;
 }
 
 sub _get_color_theme {
