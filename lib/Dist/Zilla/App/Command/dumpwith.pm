@@ -127,6 +127,19 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
 
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpwith",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
+
 =head1 DESCRIPTION
 
 This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
@@ -148,19 +161,6 @@ C<ANSI_COLORS_DISABLED>. E.g.,
 Alternatively, specify a color-free theme:
 
     dzil dumpwith -VersionProvider --color-theme=basic::plain
-
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
-
-=begin MetaPOD::JSON v1.1.0
-
-{
-    "namespace":"Dist::Zilla::App::Command::dumpwith",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
-
-
-=end MetaPOD::JSON
 
 =head1 AUTHOR
 
