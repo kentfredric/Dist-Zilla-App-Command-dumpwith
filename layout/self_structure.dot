@@ -1,0 +1,8 @@
+strict digraph Perl {
+	graph [compound=1, concentrate=1, overlap=false, rankdir=LR, ranksep=1, smoothing=triangle, splines=spline];
+	node [label="\N", shape=record, style=dotted];
+	edge [minlen=1];
+	"Dist::Zilla::App::Command" [label="Dist::Zilla::App::Command"];
+	"Dist::Zilla::App::Command::dumpwith" [label="Dist::Zilla::App::Command::dumpwith", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::App::Command" -> "Dist::Zilla::App::Command::dumpwith" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+}

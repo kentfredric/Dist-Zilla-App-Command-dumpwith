@@ -1,0 +1,54 @@
+NAME
+    Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a
+    certain role
+
+VERSION
+    version 0.001000
+
+SYNOPSIS
+      cd $PROJECT;
+      dzil dumpwith -VersionProvider
+
+      dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
+      dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
+
+    If you are using an HTML-enabled POD viewer, you should see a screenshot
+    of this in action:
+
+    ( Everyone else can visit
+    <http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/exam
+    ple_01.png> )
+
+DESCRIPTION
+    This command, like its sibling "dumpphases", exists to help make
+    understanding what is going on in "Dist::Zilla" a little easier.
+
+    At least, having this command means debugging certain kinds of problems
+    is more obvious.
+
+    If you want to see all plugins that are adding files to your dist?
+
+        dzil dumpwith -FileGatherer
+
+    Though, of course, this requires some knowledge of what roles are
+    applicable.
+
+    If you want to turn colors off, use "Term::ANSIcolor"'s environment
+    variable "ANSI_COLORS_DISABLED". E.g.,
+
+        ANSI_COLORS_DISABLED=1 dzil dumpphases
+
+    Alternatively, specify a color-free theme:
+
+        dzil dumpwith -VersionProvider --color-theme=basic::plain
+
+AUTHOR
+    Kent Fredric <kentfredric@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by Kent Fredric
+    <kentfredric@gmail.com>.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
