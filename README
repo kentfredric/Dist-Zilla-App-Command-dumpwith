@@ -26,8 +26,9 @@ DESCRIPTION
     At least, having this command means debugging certain kinds of problems
     is more obvious.
 
-    If you want to see all plugins that are adding files to your dist? dzil
-    dumpwith -FileGatherer
+    If you want to see all plugins that are adding files to your dist?
+
+        dzil dumpwith -FileGatherer
 
     Though, of course, this requires some knowledge of what roles are
     applicable.

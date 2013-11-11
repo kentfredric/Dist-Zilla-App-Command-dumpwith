@@ -135,6 +135,7 @@ what is going on in C<Dist::Zilla> a little easier.
 At least, having this command means debugging certain kinds of problems is more obvious.
 
 If you want to see all plugins that are adding files to your dist?
+
     dzil dumpwith -FileGatherer
 
 Though, of course, this requires some knowledge of what roles are applicable.
