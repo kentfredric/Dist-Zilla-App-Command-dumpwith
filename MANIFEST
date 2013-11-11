@@ -8,6 +8,7 @@ META.yml
 README
 dist.ini
 lib/Dist/Zilla/App/Command/dumpwith.pm
+media/example_01.png
 perlcritic.rc
 t/00-compile/lib_Dist_Zilla_App_Command_dumpwith_pm.t
 t/000-report-versions-tiny.t

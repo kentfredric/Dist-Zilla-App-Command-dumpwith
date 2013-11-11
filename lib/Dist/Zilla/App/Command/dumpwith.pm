@@ -33,7 +33,7 @@ sub _has_module {
   try { Module::Runtime::require_module($module) }
   catch {
     require Carp;
-    Carp::cluck( "The module $module seems invalid, did you type it right? Is it installed?" );
+    Carp::cluck("The module $module seems invalid, did you type it right? Is it installed?");
     die $_;
   };
 }
@@ -47,7 +47,7 @@ sub _has_dz_role {
   }
   catch {
     require Carp;
-    Carp::cluck( "The role -$role seems invalid, did you type it right? Is it installed?" );
+    Carp::cluck("The role -$role seems invalid, did you type it right? Is it installed?");
     die $_;
   };
 }

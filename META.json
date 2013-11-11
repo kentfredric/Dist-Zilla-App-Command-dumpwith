@@ -107,6 +107,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith.git",
+         "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
