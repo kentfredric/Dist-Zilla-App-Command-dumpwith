@@ -25,6 +25,7 @@ my %module_build_args = (
   "requires" => {
     "Carp" => 0,
     "Dist::Zilla::App" => 0,
+    "Dist::Zilla::dumpphases::Theme::basic::blue" => 0,
     "Module::Runtime" => 0,
     "Moose::Autobox" => 0,
     "Scalar::Util" => 0,

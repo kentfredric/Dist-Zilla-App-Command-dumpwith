@@ -85,6 +85,7 @@
          "requires" : {
             "Carp" : "0",
             "Dist::Zilla::App" : "0",
+            "Dist::Zilla::dumpphases::Theme::basic::blue" : "0",
             "Module::Runtime" : "0",
             "Moose::Autobox" : "0",
             "Scalar::Util" : "0",
@@ -167,6 +168,7 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.006",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.002000",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "1.7.2",
+         "Dist::Zilla::dumpphases::Theme::basic::blue" : "0.4.1",
          "Module::Build" : "0.4008",
          "Module::Runtime" : "0.013",
          "Moose::Autobox" : "0.15",
