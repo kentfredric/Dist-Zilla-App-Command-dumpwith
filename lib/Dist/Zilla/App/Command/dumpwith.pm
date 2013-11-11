@@ -142,7 +142,7 @@ Though, of course, this requires some knowledge of what roles are applicable.
 If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
 C<ANSI_COLORS_DISABLED>. E.g.,
 
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
 
 Alternatively, specify a color-free theme:
 
