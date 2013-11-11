@@ -15,36 +15,40 @@ package Dist::Zilla::App::Command::dumpwith;
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
+( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
 
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
 
 =cut
 
 =head1 DESCRIPTION
 
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
+This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
+what is going on in C<Dist::Zilla> a little easier.
 
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
+At least, having this command means debugging certain kinds of problems is more obvious.
+
+If you want to see all plugins that are adding files to your dist?
+
+    dzil dumpwith -FileGatherer
+
+Though, of course, this requires some knowledge of what roles are applicable.
 
 If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
 C<ANSI_COLORS_DISABLED>. E.g.,
 
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
 
-Alternatively, since 0.3.0 you can specify a color-free theme:
+Alternatively, specify a color-free theme:
 
-    dzil dumpphases --color-theme=basic::plain
+    dzil dumpwith -VersionProvider --color-theme=basic::plain
 
 =cut
 
 =begin MetaPOD::JSON v1.1.0
 
 {
-    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "namespace":"Dist::Zilla::App::Command::dumpwith",
     "inherits":"Dist::Zilla::App::Command",
     "interface":"class"
 }
@@ -72,9 +76,11 @@ sub _has_module {
   try { Module::Runtime::require_module($module) }
   catch {
     require Carp;
-    Carp::cluck( "The module $module seems invalid, did you type it right? Is it installed?" );
+    Carp::cluck("The module $module seems invalid, did you type it right? Is it installed?");
+    ## no critic (RequireCarping)
     die $_;
   };
+  return;
 }
 
 sub _has_dz_role {
@@ -86,21 +92,24 @@ sub _has_dz_role {
   }
   catch {
     require Carp;
-    Carp::cluck( "The role -$role seems invalid, did you type it right? Is it installed?" );
+    Carp::cluck("The role -$role seems invalid, did you type it right? Is it installed?");
+    ## no critic (RequireCarping)
     die $_;
   };
+  return;
 }
 
 sub validate_args {
   my ( $self, $opt, $args ) = @_;
   for my $arg ( @{$args} ) {
-    if ( $arg =~ /\A-(.*)\z/ ) {
+    if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
     }
     else {
       $self->_has_module($arg);
     }
   }
+  return 1;
 }
 
 sub _get_color_theme {
