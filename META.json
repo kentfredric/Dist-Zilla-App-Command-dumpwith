@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.4008"
+            "Module::Build" : "0.4200"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4008"
+            "Module::Build" : "0.4200"
          }
       },
       "develop" : {
@@ -104,7 +104,7 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpwith" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpwith.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -119,7 +119,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.32",
@@ -168,8 +168,8 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.006",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.002000",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "1.7.2",
-         "Dist::Zilla::dumpphases::Theme::basic::blue" : "0.4.1",
-         "Module::Build" : "0.4008",
+         "Dist::Zilla::dumpphases::Theme::basic::blue" : "0.4.0",
+         "Module::Build" : "0.4200",
          "Module::Runtime" : "0.013",
          "Moose::Autobox" : "0.15",
          "Pod::Coverage::TrustPod" : "0.100003",

@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpwith::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpwith::VERSION = '0.001000';
+  $Dist::Zilla::App::Command::dumpwith::VERSION = '0.001001';
 }
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
@@ -113,7 +113,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

@@ -3,10 +3,10 @@ abstract: "Dump all plugins that 'do' a certain role"
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
-  Module::Build: 0.4008
+  Module::Build: 0.4200
   Test::More: 1.001002
 configure_requires:
-  Module::Build: 0.4008
+  Module::Build: 0.4200
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
 license: perl
@@ -17,7 +17,7 @@ name: Dist-Zilla-App-Command-dumpwith
 provides:
   Dist::Zilla::App::Command::dumpwith:
     file: lib/Dist/Zilla/App/Command/dumpwith.pm
-    version: 0.001000
+    version: 0.001001
 requires:
   Carp: 0
   Dist::Zilla::App: 0
@@ -33,7 +33,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith
   repository: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpwith.git
-version: 0.001000
+version: 0.001001
 x_BuiltWith:
   modules:
     Carp: 1.32
@@ -82,8 +82,8 @@ x_BuiltWith:
     Dist::Zilla::Plugin::UploadToCPAN: 5.006
     Dist::Zilla::PluginBundle::Author::KENTNL: 2.002000
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
-    Dist::Zilla::dumpphases::Theme::basic::blue: 0.4.1
-    Module::Build: 0.4008
+    Dist::Zilla::dumpphases::Theme::basic::blue: 0.4.0
+    Module::Build: 0.4200
     Module::Runtime: 0.013
     Moose::Autobox: 0.15
     Pod::Coverage::TrustPod: 0.100003
