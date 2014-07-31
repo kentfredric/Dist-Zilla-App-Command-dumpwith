@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 # VERSION
 
-version 0.001000
+version 0.001001
 
 # SYNOPSIS
 
@@ -16,15 +16,11 @@ version 0.001000
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png) )
+( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example\_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png) )
 
-{
-    "namespace":"Dist::Zilla::App::Command::dumpwith",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
-
-
+<div>
+    <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
+</div>
 
 # DESCRIPTION
 
@@ -54,7 +50,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
