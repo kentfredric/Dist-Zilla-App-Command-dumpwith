@@ -2,8 +2,12 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpwith;
-$Dist::Zilla::App::Command::dumpwith::VERSION = '0.001001';
+
+our $VERSION = '0.001001';
+
 # ABSTRACT: Dump all plugins that 'do' a certain role
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 

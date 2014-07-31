@@ -10,6 +10,7 @@ META.json
 META.yml
 README
 dist.ini
+dist.ini.meta
 layout/self_structure.dot
 layout/self_structure.png
 lib/Dist/Zilla/App/Command/dumpwith.pm
@@ -25,11 +26,13 @@ maint-travis-ci/sync_tree.pl
 maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
+maint/perlcritic.rc.gen.pl
 media/example_01.png
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
 misc/Changes.deps.opt
+misc/perlcritic.deps
 perlcritic.rc
 t/00-compile/lib_Dist_Zilla_App_Command_dumpwith_pm.t
 t/00-report-prereqs.dd
