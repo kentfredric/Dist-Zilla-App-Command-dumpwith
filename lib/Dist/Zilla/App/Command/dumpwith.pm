@@ -2,14 +2,57 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpwith;
-BEGIN {
-  $Dist::Zilla::App::Command::dumpwith::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::App::Command::dumpwith::VERSION = '0.001001';
-}
-
+$Dist::Zilla::App::Command::dumpwith::VERSION = '0.001001';
 # ABSTRACT: Dump all plugins that 'do' a certain role
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -168,7 +211,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
