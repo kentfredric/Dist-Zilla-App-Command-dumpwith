@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+
+0.002001 2014-07-31T10:07:33Z
  [Bugfix]
  - Fix doc link to screenshot
 
