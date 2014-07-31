@@ -63,9 +63,9 @@ Alternatively, specify a color-free theme:
 
 =cut
 
-use Dist::Zilla::App -command;
+use Dist::Zilla::App '-command';
 use Moose::Autobox;
-use Try::Tiny;
+use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
