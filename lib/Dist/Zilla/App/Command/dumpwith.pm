@@ -77,7 +77,7 @@ sub opt_spec {
 }
 
 sub _has_module {
-  my ( $self, $module ) = @_;
+  my ( undef, $module ) = @_;
   require Module::Runtime;
   try { Module::Runtime::require_module($module) }
   catch {
@@ -90,7 +90,7 @@ sub _has_module {
 }
 
 sub _has_dz_role {
-  my ( $self, $role ) = @_;
+  my ( undef, $role ) = @_;
   require Module::Runtime;
   my $module = Module::Runtime::compose_module_name( 'Dist::Zilla::Role', $role );
   try {
@@ -106,7 +106,7 @@ sub _has_dz_role {
 }
 
 sub validate_args {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, undef, $args ) = @_;
   for my $arg ( @{$args} ) {
     if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
@@ -119,13 +119,13 @@ sub validate_args {
 }
 
 sub _get_color_theme {
-  my ( $self, $opt, $default ) = @_;
+  my ( undef, $opt, $default ) = @_;
   return $default unless $opt->color_theme;
   return $opt->color_theme;
 }
 
 sub _get_theme_instance {
-  my ( $self, $theme ) = @_;
+  my ( undef, $theme ) = @_;
   require Module::Runtime;
   my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
   Module::Runtime::require_module($theme_module);
