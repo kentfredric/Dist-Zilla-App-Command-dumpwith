@@ -1,8 +1,11 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002000
+0.001001
  [Added / configure requires]
  - ExtUtils::MakeMaker
+
+ [Added / runtime requires]
+ - utf8
 
  [Added / test requires]
  - ExtUtils::MakeMaker
@@ -10,6 +13,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - File::Spec::Functions
  - List::Util
  - Scalar::Util
+
+ [Changed / runtime requires]
+ - perl 5.006 → 5.008
 
  [Changed / test requires]
  - Test::More 1.001002 → 0.89
