@@ -5,6 +5,8 @@ package Dist::Zilla::App::Command::dumpwith;
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
   cd $PROJECT;
