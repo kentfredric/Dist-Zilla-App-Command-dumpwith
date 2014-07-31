@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpwith;
 
+our $VERSION = '0.001001';
+
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
 # AUTHORITY
