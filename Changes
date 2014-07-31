@@ -1,5 +1,9 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
+0.002001 2014-07-31T10:07:33Z
+ [Bugfix]
+ - Fix doc link to screenshot
+
 0.002000 2014-07-31T09:56:35Z
  [00 Major]
  - Changes that may affect hand-operated downstream.

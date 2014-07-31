@@ -3,7 +3,7 @@ NAME
     certain role
 
 VERSION
-    version 0.002000
+    version 0.002001
 
 SYNOPSIS
       cd $PROJECT;
@@ -16,8 +16,8 @@ SYNOPSIS
     of this in action:
 
     ( Everyone else can visit
-    <http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/exam
-    ple_01.png> )
+    <http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_0
+    1.png> )
 
 DESCRIPTION
     This command, like its sibling "dumpphases", exists to help make
