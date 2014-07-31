@@ -21,7 +21,7 @@ name: Dist-Zilla-App-Command-dumpwith
 provides:
   Dist::Zilla::App::Command::dumpwith:
     file: lib/Dist/Zilla/App/Command/dumpwith.pm
-    version: '0.001001'
+    version: '0.002000'
 requires:
   Carp: '0'
   Dist::Zilla::App: '0'
@@ -37,7 +37,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-App-Command-dumpwith/issues
   homepage: https://github.com/kentnl/Dist-Zilla-App-Command-dumpwith
   repository: https://github.com/kentnl/Dist-Zilla-App-Command-dumpwith.git
-version: '0.001001'
+version: '0.002000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -422,7 +422,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.001001-source
+          tag: 0.002000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -476,7 +476,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.001001'
+          tag: '0.002000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
