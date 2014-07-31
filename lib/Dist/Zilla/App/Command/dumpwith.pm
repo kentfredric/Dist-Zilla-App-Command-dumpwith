@@ -21,9 +21,9 @@ our $VERSION = '0.002001';
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
+( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
 
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
 
 =cut
 
