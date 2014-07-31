@@ -1,22 +1,71 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::App::Command::dumpwith;
-BEGIN {
-  $Dist::Zilla::App::Command::dumpwith::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::App::Command::dumpwith::VERSION = '0.001000';
-}
+
+our $VERSION = '0.002000';
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Dist::Zilla::App -command;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Dist::Zilla::App '-command';
 use Moose::Autobox;
-use Try::Tiny;
+use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
@@ -28,7 +77,7 @@ sub opt_spec {
 }
 
 sub _has_module {
-  my ( $self, $module ) = @_;
+  my ( undef, $module ) = @_;
   require Module::Runtime;
   try { Module::Runtime::require_module($module) }
   catch {
@@ -41,7 +90,7 @@ sub _has_module {
 }
 
 sub _has_dz_role {
-  my ( $self, $role ) = @_;
+  my ( undef, $role ) = @_;
   require Module::Runtime;
   my $module = Module::Runtime::compose_module_name( 'Dist::Zilla::Role', $role );
   try {
@@ -57,7 +106,7 @@ sub _has_dz_role {
 }
 
 sub validate_args {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, undef, $args ) = @_;
   for my $arg ( @{$args} ) {
     if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
@@ -70,13 +119,13 @@ sub validate_args {
 }
 
 sub _get_color_theme {
-  my ( $self, $opt, $default ) = @_;
+  my ( undef, $opt, $default ) = @_;
   return $default unless $opt->color_theme;
   return $opt->color_theme;
 }
 
 sub _get_theme_instance {
-  my ( $self, $theme ) = @_;
+  my ( undef, $theme ) = @_;
   require Module::Runtime;
   my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
   Module::Runtime::require_module($theme_module);
@@ -113,7 +162,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 =head1 VERSION
 
-version 0.001000
+version 0.002000
 
 =head1 SYNOPSIS
 
@@ -168,7 +217,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
