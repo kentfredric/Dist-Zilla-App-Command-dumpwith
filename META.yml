@@ -5,9 +5,6 @@ author:
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  File::Spec::Functions: '0'
-  List::Util: '0'
-  Scalar::Util: '0'
   Test::More: '0.89'
 configure_requires:
   ExtUtils::MakeMaker: '0'
@@ -83,16 +80,14 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Test::Kwalitee: '2.07'
     Dist::Zilla::Plugin::Test::MinimumVersion: '2.000005'
     Dist::Zilla::Plugin::Test::Perl::Critic: '2.112410'
-    Dist::Zilla::Plugin::Test::ReportPrereqs: '0.016'
+    Dist::Zilla::Plugin::Test::ReportPrereqs: '0.018'
     Dist::Zilla::Plugin::TestRelease: '5.020'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.016006'
-    Dist::Zilla::dumpphases::Theme::basic::blue: '1.000000'
+    Dist::Zilla::PluginBundle::Author::KENTNL: '2.016007'
+    Dist::Zilla::dumpphases::Theme::basic::blue: '1.000002'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.48'
-    File::Spec::Functions: '3.48'
-    List::Util: '1.39'
     Module::Runtime: '0.014'
     Moose::Autobox: '0.15'
     Pod::Coverage::TrustPod: '0.100003'
@@ -208,7 +203,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::ReportPrereqs
       name: '@Author::KENTNL/Test::ReportPrereqs'
-      version: '0.016'
+      version: '0.018'
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
