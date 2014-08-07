@@ -1,6 +1,9 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
-0.002002 2014-07-31T10:09:26Z
+0.002002 2014-08-07T11:29:04Z
+ [00 Trivial]
+ - update Test::ReportVersions
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002001, see misc/*.deps* for details
  - develop: (suggests: ↑1)
