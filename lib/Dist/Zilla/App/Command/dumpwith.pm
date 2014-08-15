@@ -23,46 +23,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 use Dist::Zilla::App '-command';
 use Moose::Autobox;
 use Try::Tiny qw( try catch );
@@ -176,8 +136,6 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -188,6 +146,8 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 
 =end MetaPOD::JSON
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
 
 =head1 DESCRIPTION
 
