@@ -1,7 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
-0.002002 2014-08-15T05:21:29Z
+0.002002 2014-08-15T19:37:03Z
  [00 Trivial]
+ - CPANDAY!
  - no code changes.
  - tests augmented.
  - whitespace adjusted.
@@ -15,7 +16,7 @@ Release history for Dist-Zilla-App-Command-dumpwith
  - Improve source side POD to reduce build side whitespace.
 
  [Tests]
- - update Test::ReportVersions
+ - update Test::ReportPrereqs
 
 0.002001 2014-07-31T10:07:33Z
  [Bugfix]
