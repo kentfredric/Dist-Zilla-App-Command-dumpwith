@@ -11,46 +11,6 @@ our $VERSION = '0.002002';
 
 # AUTHORITY
 
-=head1 SYNOPSIS
-
-  cd $PROJECT;
-  dzil dumpwith -VersionProvider
-
-  dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
-  dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
-
-If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
-
-( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
-
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
-
-=cut
-
-=head1 DESCRIPTION
-
-This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
-what is going on in C<Dist::Zilla> a little easier.
-
-At least, having this command means debugging certain kinds of problems is more obvious.
-
-If you want to see all plugins that are adding files to your dist?
-
-    dzil dumpwith -FileGatherer
-
-Though, of course, this requires some knowledge of what roles are applicable.
-
-If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
-
-    ANSI_COLORS_DISABLED=1 dzil dumpphases
-
-Alternatively, specify a color-free theme:
-
-    dzil dumpwith -VersionProvider --color-theme=basic::plain
-
-=cut
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -149,3 +109,41 @@ sub execute {
 }
 
 1;
+
+=head1 SYNOPSIS
+
+  cd $PROJECT;
+  dzil dumpwith -VersionProvider
+
+  dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
+  dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
+
+If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
+
+( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
+
+=head1 DESCRIPTION
+
+This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
+what is going on in C<Dist::Zilla> a little easier.
+
+At least, having this command means debugging certain kinds of problems is more obvious.
+
+If you want to see all plugins that are adding files to your dist?
+
+    dzil dumpwith -FileGatherer
+
+Though, of course, this requires some knowledge of what roles are applicable.
+
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
+
+Alternatively, specify a color-free theme:
+
+    dzil dumpwith -VersionProvider --color-theme=basic::plain
+
+=cut
