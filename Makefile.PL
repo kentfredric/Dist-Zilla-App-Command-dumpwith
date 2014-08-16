@@ -34,12 +34,9 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "File::Spec::Functions" => 0,
-    "List::Util" => 0,
-    "Scalar::Util" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.002001",
+  "VERSION" => "0.002002",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -52,8 +49,6 @@ my %FallbackPrereqs = (
   "Dist::Zilla::dumpphases::Theme::basic::blue" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
-  "File::Spec::Functions" => 0,
-  "List::Util" => 0,
   "Module::Runtime" => 0,
   "Moose::Autobox" => 0,
   "Scalar::Util" => 0,

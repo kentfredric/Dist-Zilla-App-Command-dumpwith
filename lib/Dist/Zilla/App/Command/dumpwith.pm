@@ -5,51 +5,11 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpwith;
 
-our $VERSION = '0.002001';
+our $VERSION = '0.002002';
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -162,7 +122,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 =head1 VERSION
 
-version 0.002001
+version 0.002002
 
 =head1 SYNOPSIS
 
@@ -176,8 +136,6 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png> )
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -188,6 +146,8 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 
 =end MetaPOD::JSON
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_01.png" alt="Screenshot" width="806" height="438"/></center>
 
 =head1 DESCRIPTION
 
