@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 # VERSION
 
-version 0.002002
+version 0.002003
 
 # SYNOPSIS
 
