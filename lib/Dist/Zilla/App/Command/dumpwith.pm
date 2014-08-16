@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpwith;
 
-our $VERSION = '0.002002';
+our $VERSION = '0.002003';
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
@@ -122,7 +122,7 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 =head1 VERSION
 
-version 0.002002
+version 0.002003
 
 =head1 SYNOPSIS
 
