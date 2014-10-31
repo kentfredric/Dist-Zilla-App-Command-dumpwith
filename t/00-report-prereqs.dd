@@ -79,7 +79,6 @@ do { my $x = {
                                       'Dist::Zilla::App' => '0',
                                       'Dist::Zilla::dumpphases::Theme::basic::blue' => '0',
                                       'Module::Runtime' => '0',
-                                      'Moose::Autobox' => '0',
                                       'Scalar::Util' => '0',
                                       'Try::Tiny' => '0',
                                       'perl' => '5.006',
