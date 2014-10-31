@@ -40,6 +40,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::EOLTests
 
  [Removed / runtime requires]
+ - Moose::Autobox
  - utf8
 
 0.002002 2014-08-15T21:14:38Z
