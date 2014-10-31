@@ -23,8 +23,6 @@ our $VERSION = '0.002003';
 =cut
 
 use Dist::Zilla::App '-command';
-use Try::Tiny qw( try catch );
-use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
 sub abstract { return 'Dump all plugins that "do" a specific role' }
@@ -37,8 +35,9 @@ sub opt_spec {
 sub _has_module {
   my ( undef, $module ) = @_;
   require Module::Runtime;
-  try { Module::Runtime::require_module($module) }
-  catch {
+  require Try::Tiny;
+  Try::Tiny::try { Module::Runtime::require_module($module) }
+  Try::Tiny::catch {
     require Carp;
     Carp::cluck("The module $module seems invalid, did you type it right? Is it installed?");
     ## no critic (RequireCarping)
@@ -51,10 +50,11 @@ sub _has_dz_role {
   my ( undef, $role ) = @_;
   require Module::Runtime;
   my $module = Module::Runtime::compose_module_name( 'Dist::Zilla::Role', $role );
-  try {
+  require Try::Tiny;
+  Try::Tiny::try {
     Module::Runtime::require_module($module);
   }
-  catch {
+  Try::Tiny::catch {
     require Carp;
     Carp::cluck("The role -$role seems invalid, did you type it right? Is it installed?");
     ## no critic (RequireCarping)
@@ -96,10 +96,11 @@ sub execute {
 
   my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
 
+  require Scalar::Util;
   for my $arg ( @{$args} ) {
     $theme->print_section_prelude( 'role: ', $arg );
     for my $plugin ( @{ $zilla->plugins_with($arg) } ) {
-      $theme->print_star_assoc( $plugin->plugin_name, blessed($plugin) );
+      $theme->print_star_assoc( $plugin->plugin_name, Scalar::Util::blessed($plugin) );
     }
   }
 
