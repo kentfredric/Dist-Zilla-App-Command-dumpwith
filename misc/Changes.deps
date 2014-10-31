@@ -11,6 +11,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - perl 5.008 → 5.006
 
  [Removed / runtime requires]
+ - Moose::Autobox
  - utf8
 
 0.002002 2014-08-15T21:14:38Z

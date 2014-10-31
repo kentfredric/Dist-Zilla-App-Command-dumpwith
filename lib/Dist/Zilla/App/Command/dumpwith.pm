@@ -23,7 +23,6 @@ our $VERSION = '0.002003';
 =cut
 
 use Dist::Zilla::App '-command';
-use Moose::Autobox;
 use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
