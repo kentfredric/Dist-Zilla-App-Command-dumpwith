@@ -11,6 +11,7 @@ Release history for Dist-Zilla-App-Command-dumpwith
  - Theme loading and construction simplified
  - Theme defaulting uses less useless code.
  - Color themes validated earlier
+ - Load Dzil lazier
 
 0.002003 2014-10-31T15:02:11Z 567b541
  [Dependencies::Stats]
