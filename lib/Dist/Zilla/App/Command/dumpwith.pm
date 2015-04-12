@@ -64,7 +64,7 @@ sub _has_dz_role {
 }
 
 sub validate_args {
-  my ( $self, undef, $args ) = @_;
+  my ( $self, $opt, $args ) = @_;
   for my $arg ( @{$args} ) {
     if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
