@@ -1,54 +1,48 @@
-NAME
-    Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a
-    certain role
+Dist::Zilla::App::Command::dumpwith
 
-VERSION
-    version 0.002004
+This command, like its sibling "dumpphases", exists to help make
+understanding what is going on in "Dist::Zilla" a little easier.
 
-SYNOPSIS
-      cd $PROJECT;
-      dzil dumpwith -VersionProvider
+At least, having this command means debugging certain kinds of problems
+is more obvious.
 
-      dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
-      dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
+If you want to see all plugins that are adding files to your dist?
 
-    If you are using an HTML-enabled POD viewer, you should see a screenshot
-    of this in action:
+    dzil dumpwith -FileGatherer
 
-    ( Everyone else can visit
-    <http://kentnl.github.io/Dist-Zilla-App-Command-dumpwith/media/example_0
-    1.png> )
+Though, of course, this requires some knowledge of what roles are
+applicable.
 
-DESCRIPTION
-    This command, like its sibling "dumpphases", exists to help make
-    understanding what is going on in "Dist::Zilla" a little easier.
+If you want to turn colors off, use "Term::ANSIcolor"'s environment
+variable "ANSI_COLORS_DISABLED". E.g.,
 
-    At least, having this command means debugging certain kinds of problems
-    is more obvious.
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
 
-    If you want to see all plugins that are adding files to your dist?
+Alternatively, specify a color-free theme:
 
-        dzil dumpwith -FileGatherer
+    dzil dumpwith -VersionProvider --color-theme=basic::plain
 
-    Though, of course, this requires some knowledge of what roles are
-    applicable.
+INSTALLATION
 
-    If you want to turn colors off, use "Term::ANSIcolor"'s environment
-    variable "ANSI_COLORS_DISABLED". E.g.,
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-        ANSI_COLORS_DISABLED=1 dzil dumpphases
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-    Alternatively, specify a color-free theme:
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-        dzil dumpwith -VersionProvider --color-theme=basic::plain
-
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric
-    <kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2015 by Kent Fredric
+<kentfredric@gmail.com>.
 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
