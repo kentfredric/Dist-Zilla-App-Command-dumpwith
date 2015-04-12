@@ -76,7 +76,7 @@ sub validate_args {
   }
   my $theme = $opt->color_theme || 'basic::blue';
   try {
-    $self->_load_color_theme( $theme );
+    $self->_load_color_theme($theme);
   }
   catch {
     my $error = shift;
@@ -119,6 +119,7 @@ sub _available_themes {
   ## no critic (Variables::ProhibitUnusedVarsStricter)
   return ( my (@list) = sort keys %themes );
 }
+
 sub _load_color_theme {
   my ( undef, $color_theme ) = @_;
   require Module::Runtime;
