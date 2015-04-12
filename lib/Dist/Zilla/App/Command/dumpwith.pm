@@ -74,18 +74,18 @@ sub validate_args {
     }
   }
   my $theme = $opt->color_theme || 'basic::blue';
-  try {
+#  try {
     $self->_load_color_theme( $theme );
     *STDERR->print("DID NOT FAIL");
-  }
-  catch {
-    my $error = shift;
-    require Carp;
-    my $message = $error . qq[\n\n];
-    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $theme;
-    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
-    Carp::croak($message);
-  };
+#  }
+#  catch {
+#    my $error = shift;
+#    require Carp;
+#    my $message = $error . qq[\n\n];
+#    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $theme;
+#    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
+#    Carp::croak($message);
+#  };
   return 1;
 }
 
