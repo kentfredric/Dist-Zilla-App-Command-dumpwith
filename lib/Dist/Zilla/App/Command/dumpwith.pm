@@ -23,6 +23,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Dist::Zilla::App '-command';
+use Try::Tiny qw( try catch );
 
 ## no critic ( ProhibitAmbiguousNames)
 sub abstract { return 'Dump all plugins that "do" a specific role' }
