@@ -78,7 +78,7 @@ sub validate_args {
     $self->_load_color_theme( $theme );
   }
   catch {
-    my $error = shift;
+    my $error = $_;
     require Carp;
     my $message = $error . qq[\n\n];
     $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $theme;
