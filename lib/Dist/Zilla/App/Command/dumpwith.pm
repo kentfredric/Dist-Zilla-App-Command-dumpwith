@@ -77,7 +77,7 @@ sub validate_args {
   try {
     $self->_load_color_theme( $theme );
     *STDERR->print("DID NOT FAIL");
-    1;
+    $@ = undef;
   }
   catch {
     my $error = shift;
