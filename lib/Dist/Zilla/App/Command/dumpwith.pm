@@ -73,28 +73,64 @@ sub validate_args {
       $self->_has_module($arg);
     }
   }
+  try {
+    $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+  }
+  catch {
+    my $error = shift;
+    require Carp;
+    my $message = $error . qq[\n\n];
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
+    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
+    Carp::croak($message);
+  };
   return 1;
 }
 
-sub _get_color_theme {
-  my ( undef, $opt, $default ) = @_;
-  return $default unless $opt->color_theme;
-  return $opt->color_theme;
+sub _available_themes {
+  my (undef) = @_;
+  require Path::ScanINC;
+  my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  if ( not @theme_dirs ) {
+    require Carp;
+    ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+    Carp::cluck('Found no theme dirs in @INC matching Dist/Zilla/dumpphases/Theme/');
+  }
+  my (%themes);
+  require Path::Tiny;
+  for my $dir (@theme_dirs) {
+    my $it = Path::Tiny->new($dir)->iterator(
+      {
+        recurse         => 1,
+        follow_symlinks => 0,
+      },
+    );
+    while ( my $item = $it->() ) {
+      next unless $item =~ /[.]pm\z/msx;
+      next if -d $item;
+      my $theme_name = $item->relative($dir);
+      $theme_name =~ s{[.]pm\z}{}msx;
+      $theme_name =~ s{/}{::}msxg;
+      $themes{$theme_name} = 1;
+    }
+  }
+  ## no critic (Variables::ProhibitUnusedVarsStricter)
+  return ( my (@list) = sort keys %themes );
 }
-
-sub _get_theme_instance {
-  my ( undef, $theme ) = @_;
+sub _load_color_theme {
+  my ( undef, $color_theme ) = @_;
   require Module::Runtime;
-  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
+  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $color_theme );
   Module::Runtime::require_module($theme_module);
-  return $theme_module->new();
+  return $theme_module;
 }
 
 sub execute {
   my ( $self, $opt, $args ) = @_;
   my $zilla = $self->zilla;
 
-  my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
+  my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+  my $theme = $theme_module->new();
 
   require Scalar::Util;
   for my $arg ( @{$args} ) {

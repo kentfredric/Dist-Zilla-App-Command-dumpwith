@@ -57,6 +57,8 @@
       "ExtUtils::MakeMaker" : "7.04",
       "File::Spec" : "3.53",
       "Module::Runtime" : "0.014",
+      "Path::ScanINC" : "1.000002",
+      "Path::Tiny" : "0.068",
       "Pod::Coverage::TrustPod" : "0.100003",
       "Scalar::Util" : "1.41",
       "Test::CPAN::Changes" : "0.30",
