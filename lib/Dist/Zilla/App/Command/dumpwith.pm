@@ -76,6 +76,7 @@ sub validate_args {
   my $theme = $opt->color_theme || 'basic::blue';
   try {
     $self->_load_color_theme( $theme );
+    *STDERR->print("DID NOT FAIL");
   }
   catch {
     my $error = shift;
