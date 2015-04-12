@@ -73,14 +73,15 @@ sub validate_args {
       $self->_has_module($arg);
     }
   }
+  my $theme = $opt->color_theme || 'basic::blue';
   try {
-    $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+    $self->_load_color_theme( $theme );
   }
   catch {
     my $error = shift;
     require Carp;
     my $message = $error . qq[\n\n];
-    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $theme;
     $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
     Carp::croak($message);
   };
