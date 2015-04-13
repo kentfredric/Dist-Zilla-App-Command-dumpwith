@@ -76,12 +76,6 @@ sub validate_args {
   return 1;
 }
 
-sub _get_color_theme {
-  my ( undef, $opt, $default ) = @_;
-  return $default unless $opt->color_theme;
-  return $opt->color_theme;
-}
-
 sub _load_color_theme {
   my ( undef, $color_theme ) = @_;
   require Module::Runtime;
@@ -94,7 +88,7 @@ sub execute {
   my ( $self, $opt, $args ) = @_;
   my $zilla = $self->zilla;
 
-  my $theme_module = $self->_load_color_theme( $self->_get_color_theme( $opt, 'basic::blue' ) );
+  my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   my $theme = $theme_module->new();
 
   require Scalar::Util;
