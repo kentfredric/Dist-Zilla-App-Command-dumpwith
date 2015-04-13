@@ -130,14 +130,15 @@ sub _load_color_theme {
 
 sub execute {
   my ( $self, $opt, $args ) = @_;
-  my $zilla = $self->zilla;
 
   my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   my $theme = $theme_module->new();
 
   require Scalar::Util;
+  my $zilla;
   for my $arg ( @{$args} ) {
     $theme->print_section_prelude( 'role: ', $arg );
+    $zilla ||= $self->zilla;
     for my $plugin ( @{ $zilla->plugins_with($arg) } ) {
       $theme->print_star_assoc( $plugin->plugin_name, Scalar::Util::blessed($plugin) );
     }
