@@ -128,7 +128,7 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpwith" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpwith.pm",
-         "version" : "0.002010"
+         "version" : "0.002011"
       }
    },
    "release_status" : "stable",
@@ -143,7 +143,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-App-Command-dumpwith"
       }
    },
-   "version" : "0.002010",
+   "version" : "0.002011",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -600,7 +600,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.002010-source",
+                  "tag" : "0.002011-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -671,7 +671,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.002010",
+                  "tag" : "0.002011",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
