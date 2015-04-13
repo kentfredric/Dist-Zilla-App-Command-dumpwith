@@ -14,7 +14,6 @@ dist.ini
 dist.ini.meta
 lib/Dist/Zilla/App/Command/dumpwith.pm
 maint/perlcritic.rc.gen.pl
-media/example_01.png
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
