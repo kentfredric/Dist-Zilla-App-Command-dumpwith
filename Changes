@@ -5,13 +5,16 @@ Release history for Dist-Zilla-App-Command-dumpwith
  - Dependencies changed since 0.002003, see misc/*.deps* for details
  - develop: +3 ↑3 -1 (recommends: ↓1, suggests: ↑2)
  - runtime: +2 (recommends: +1)
- - test: (recommends: ↓1)
+ - test: +2 (recommends: ↓1)
 
  [Internals]
  - Theme loading and construction simplified
  - Theme defaulting uses less useless code.
  - Color themes validated earlier
  - Load Dzil lazier
+
+ [Tests]
+ - Added tests covering noop modes.
 
 0.002003 2014-10-31T15:02:11Z 567b541
  [Dependencies::Stats]

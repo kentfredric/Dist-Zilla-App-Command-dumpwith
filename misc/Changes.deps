@@ -5,6 +5,10 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Path::ScanINC
  - Path::Tiny
 
+ [Added / test requires]
+ - Dist::Zilla::Util::Test::KENTNL
+ - Test::DZil
+
 0.002003 2014-10-31T15:02:11Z
  [Added / configure requires]
  - perl 5.006
