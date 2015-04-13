@@ -13,6 +13,10 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Path::ScanINC
  - Path::Tiny
 
+ [Added / test requires]
+ - Dist::Zilla::Util::Test::KENTNL
+ - Test::DZil
+
  [Changed / develop recommends]
  - Test::More 1.001008 → 0.99
 

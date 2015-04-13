@@ -30,6 +30,7 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Plugin::AutoVersion" => 0,
     "Dist::Zilla::Util::Test::KENTNL" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
@@ -46,6 +47,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla::App" => 0,
+  "Dist::Zilla::Plugin::AutoVersion" => 0,
   "Dist::Zilla::Util::Test::KENTNL" => 0,
   "Dist::Zilla::dumpphases::Theme::basic::blue" => 0,
   "ExtUtils::MakeMaker" => 0,

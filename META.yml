@@ -3,6 +3,7 @@ abstract: "Dump all plugins that 'do' a certain role"
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
+  Dist::Zilla::Plugin::AutoVersion: '0'
   Dist::Zilla::Util::Test::KENTNL: '0'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'

@@ -115,6 +115,7 @@
             "Test::More" : "0.99"
          },
          "requires" : {
+            "Dist::Zilla::Plugin::AutoVersion" : "0",
             "Dist::Zilla::Util::Test::KENTNL" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
