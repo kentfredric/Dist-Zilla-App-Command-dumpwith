@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002010
+0.002011
+
+0.002010 2015-04-13T01:38:43Z
  [Added / runtime requires]
  - Path::ScanINC
  - Path::Tiny
