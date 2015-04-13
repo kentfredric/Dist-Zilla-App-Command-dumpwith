@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpwith;
 
-our $VERSION = '0.002004';
+our $VERSION = '0.002011';
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
