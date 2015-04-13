@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+ [Documentation]
+ - Redirect URIs to different repo.
+
+ [Packaging]
+ - Removed some large unneeded files
 
 0.002010 2015-04-13T01:38:43Z 3258308
  [Dependencies::Stats]
