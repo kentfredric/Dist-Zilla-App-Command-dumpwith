@@ -6,6 +6,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Path::Tiny
 
  [Added / test requires]
+ - Dist::Zilla::Plugin::AutoVersion
  - Dist::Zilla::Util::Test::KENTNL
  - Test::DZil
 
