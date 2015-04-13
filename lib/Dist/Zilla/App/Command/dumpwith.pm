@@ -23,6 +23,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Dist::Zilla::App '-command';
+use Try::Tiny qw( try catch );
 
 ## no critic ( ProhibitAmbiguousNames)
 sub abstract { return 'Dump all plugins that "do" a specific role' }
@@ -64,7 +65,7 @@ sub _has_dz_role {
 }
 
 sub validate_args {
-  my ( $self, undef, $args ) = @_;
+  my ( $self, $opt, $args ) = @_;
   for my $arg ( @{$args} ) {
     if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
@@ -73,7 +74,50 @@ sub validate_args {
       $self->_has_module($arg);
     }
   }
+  my $theme = $opt->color_theme || 'basic::blue';
+  try {
+    $self->_load_color_theme($theme);
+  }
+  catch {
+    my $error = shift;
+    require Carp;
+    my $message = $error . qq[\n\n];
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $theme;
+    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
+    Carp::croak($message);
+  };
   return 1;
+}
+
+sub _available_themes {
+  my (undef) = @_;
+  require Path::ScanINC;
+  my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  if ( not @theme_dirs ) {
+    require Carp;
+    ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+    Carp::cluck('Found no theme dirs in @INC matching Dist/Zilla/dumpphases/Theme/');
+  }
+  my (%themes);
+  require Path::Tiny;
+  for my $dir (@theme_dirs) {
+    my $it = Path::Tiny->new($dir)->iterator(
+      {
+        recurse         => 1,
+        follow_symlinks => 0,
+      },
+    );
+    while ( my $item = $it->() ) {
+      next unless $item =~ /[.]pm\z/msx;
+      next if -d $item;
+      my $theme_name = $item->relative($dir);
+      $theme_name =~ s{[.]pm\z}{}msx;
+      $theme_name =~ s{/}{::}msxg;
+      $themes{$theme_name} = 1;
+    }
+  }
+  ## no critic (Variables::ProhibitUnusedVarsStricter)
+  return ( my (@list) = sort keys %themes );
 }
 
 sub _load_color_theme {

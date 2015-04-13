@@ -21,11 +21,15 @@ provides:
   Dist::Zilla::App::Command::dumpwith:
     file: lib/Dist/Zilla/App/Command/dumpwith.pm
     version: '0.002004'
+recommends:
+  Path::Tiny: '0.058'
 requires:
   Carp: '0'
   Dist::Zilla::App: '0'
   Dist::Zilla::dumpphases::Theme::basic::blue: '0'
   Module::Runtime: '0'
+  Path::ScanINC: '0'
+  Path::Tiny: '0'
   Scalar::Util: '0'
   Try::Tiny: '0'
   perl: '5.006'
