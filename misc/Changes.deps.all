@@ -6,6 +6,13 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Prereqs::Upgrade
  - Dist::Zilla::Plugin::Readme::Brief
 
+ [Added / runtime recommends]
+ - Path::Tiny 0.058
+
+ [Added / runtime requires]
+ - Path::ScanINC
+ - Path::Tiny
+
  [Changed / develop recommends]
  - Test::More 1.001008 → 0.99
 
