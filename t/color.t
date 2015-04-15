@@ -3,7 +3,7 @@ use warnings;
 
 use Test::More;
 use Test::DZil qw( simple_ini );
-use Dist::Zilla::Util::Test::KENTNL qw( dztest );
+use Dist::Zilla::Util::Test::KENTNL 1.005000 qw( dztest );
 
 # FILENAME: basic.t
 # CREATED: 04/13/15 11:22:34 by Kent Fredric (kentnl) <kentfredric@gmail.com>
@@ -29,8 +29,8 @@ delete local $ENV{ANSI_COLORS_DISABLED};
   $test->add_file( 'dist.ini' => simple_ini( ['AutoVersion'] ) );
   my $result = $test->run_command( [ 'dumpwith', '--color-theme=FAKE::FAKE' ] );
   ok( ref $result, 'self-test executed with no args' );
-  isnt( $result->error,     undef, 'errors found' ) and note explain $result->error;
-  isnt( $result->exit_code, 0,     'exit != 0' );
+  isnt( $result->error, undef, 'errors found' ) and note explain $result->error;
+  isnt( $result->exit_code, 0, 'exit != 0' );
   like( $result->error, qr/available themes are/, "reports avail themes" );
 }
 done_testing;
