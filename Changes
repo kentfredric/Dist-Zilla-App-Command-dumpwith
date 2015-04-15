@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+
+0.002012 2015-04-15T00:35:51Z 59708df
  [Dependencies]
  - Make sure tests have a new enough version of dztest for app testing.
 
