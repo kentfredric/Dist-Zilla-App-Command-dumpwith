@@ -68,7 +68,7 @@
       "Test::DZil" : "5.034",
       "Test::EOL" : "1.5",
       "Test::Kwalitee" : "1.22",
-      "Test::More" : "1.301001_098",
+      "Test::More" : "1.301001_100",
       "Test::Pod" : "1.48",
       "Test::Pod::Coverage" : "1.10",
       "Try::Tiny" : "0.22",

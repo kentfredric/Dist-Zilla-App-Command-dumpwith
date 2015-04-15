@@ -3,7 +3,7 @@ use warnings;
 
 use Test::More;
 use Test::DZil qw( simple_ini );
-use Dist::Zilla::Util::Test::KENTNL qw( dztest );
+use Dist::Zilla::Util::Test::KENTNL 1.005000 qw( dztest );
 
 # FILENAME: basic.t
 # CREATED: 04/13/15 11:22:34 by Kent Fredric (kentnl) <kentfredric@gmail.com>

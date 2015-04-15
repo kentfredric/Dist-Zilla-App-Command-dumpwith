@@ -31,13 +31,13 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Dist::Zilla::Plugin::AutoVersion" => 0,
-    "Dist::Zilla::Util::Test::KENTNL" => 0,
+    "Dist::Zilla::Util::Test::KENTNL" => "1.005000",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
     "Test::DZil" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.002011",
+  "VERSION" => "0.002012",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -48,7 +48,7 @@ my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla::App" => 0,
   "Dist::Zilla::Plugin::AutoVersion" => 0,
-  "Dist::Zilla::Util::Test::KENTNL" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.005000",
   "Dist::Zilla::dumpphases::Theme::basic::blue" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,

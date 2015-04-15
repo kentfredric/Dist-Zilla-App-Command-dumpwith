@@ -101,7 +101,7 @@ do { my $x = {
                                    },
                    'requires' => {
                                    'Dist::Zilla::Plugin::AutoVersion' => '0',
-                                   'Dist::Zilla::Util::Test::KENTNL' => '0',
+                                   'Dist::Zilla::Util::Test::KENTNL' => '1.005000',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'Test::DZil' => '0',

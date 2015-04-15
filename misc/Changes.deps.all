@@ -1,6 +1,10 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-0.002011
+0.002012
+ [Changed / test requires]
+ - Dist::Zilla::Util::Test::KENTNL 0 → 1.005000
+
+0.002011 2015-04-13T02:42:56Z
 
 0.002010 2015-04-13T01:38:43Z
  [Added / develop requires]
