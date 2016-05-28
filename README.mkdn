@@ -4,15 +4,15 @@ Dist::Zilla::App::Command::dumpwith - Dump all plugins that 'do' a certain role
 
 # VERSION
 
-version 0.002013
+version 0.003000
 
 # SYNOPSIS
 
     cd $PROJECT;
-    dzil dumpwith -VersionProvider
+    dzil dumpwith -- -VersionProvider
 
-    dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
-    dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
+    dzil dumpwith --color-theme=basic::plain -- -FileGatherer   # plain text
+    dzil dumpwith --color-theme=basic::green -- -BeforeRelease  # green text
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
@@ -27,6 +27,29 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
     </center>
 </div>
 
+# KNOWN ISSUES
+
+Prior to `Dist::Zilla 6.0`, the format
+
+    dzil dumpwith -VersionProvider
+
+Was fine.
+
+However, since [`Dist::Zilla 6.0`](https://metacpan.org/changes/release/RJBS/Dist-Zilla-6.000-TRIAL#L9-11),
+`Dist::Zilla` maps [`-V` to `verbose`](https://github.com/rjbs/Dist-Zilla/commit/98f9fb8b60cc645ffd401d08f3014675166ad32c#diff-99ae7353049f6c64733828dfcfe4ffdfR16).
+
+To work around this problem on `Dist::Zilla 6.0` or later, you need to either not use short-hands for roles,
+
+    # dzil dumpwith -VersionProvider
+    dzil dumpwith Dist::Zilla::Role::VersionProvider
+
+Or place all the role names (and only role names) after a `--`
+
+    dzil dumpwith --color=... -- -VersionProvider -OtherRole --color-ThisIsAlsoARoleBTWSoDontDoThis
+
+Any suggestions welcome for how I can detect this problem case happening and report it,
+but the data appears now outside of a scope I can probe.
+
 # DESCRIPTION
 
 This command, like its sibling [`dumpphases`](https://metacpan.org/pod/Dist::Zilla::App::Command::dumpphases), exists to help make understanding
@@ -36,7 +59,7 @@ At least, having this command means debugging certain kinds of problems is more 
 
 If you want to see all plugins that are adding files to your dist?
 
-    dzil dumpwith -FileGatherer
+    dzil dumpwith -- -FileGatherer
 
 Though, of course, this requires some knowledge of what roles are applicable.
 
@@ -47,7 +70,7 @@ If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](h
 
 Alternatively, specify a color-free theme:
 
-    dzil dumpwith -VersionProvider --color-theme=basic::plain
+    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
 
 # AUTHOR
 

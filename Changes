@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+ - Add support for "--" escaping to isolate the role names to avoid complications introduced by '-V' becomming a thing
+   on Dzil 6.0.
+ - Tests and documentation also updated to prefer that notation where it could be ambiguous.
+ - Closes #1, thanks to Slaven Rezić and Karen Etheridge for bug feedback.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002012, see misc/*.deps* for details
  - develop: +5 ↑1 -1 (suggests: ↑2)

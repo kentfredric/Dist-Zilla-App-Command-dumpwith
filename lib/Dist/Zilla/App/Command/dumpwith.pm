@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpwith;
 
-our $VERSION = '0.002013';
+our $VERSION = '0.003000';
 
 # ABSTRACT: Dump all plugins that 'do' a certain role
 
@@ -67,6 +67,7 @@ sub _has_dz_role {
 sub validate_args {
   my ( $self, $opt, $args ) = @_;
   for my $arg ( @{$args} ) {
+    next if q[--] eq $arg;
     if ( $arg =~ /\A-(.*)\z/msx ) {
       $self->_has_dz_role($1);
     }
@@ -130,17 +131,23 @@ sub _load_color_theme {
 
 sub execute {
   my ( $self, $opt, $args ) = @_;
-
   my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   my $theme = $theme_module->new();
 
   require Scalar::Util;
   my $zilla;
   for my $arg ( @{$args} ) {
+    next if q[--] eq $arg;
     $theme->print_section_prelude( 'role: ', $arg );
     $zilla ||= $self->zilla;
+    my $seen = 0;
     for my $plugin ( @{ $zilla->plugins_with($arg) } ) {
       $theme->print_star_assoc( $plugin->plugin_name, Scalar::Util::blessed($plugin) );
+      $seen++;
+    }
+    if ( not $seen ) {
+      require Carp;
+      Carp::carp("No plugins matching $arg found");
     }
   }
 
@@ -152,10 +159,10 @@ sub execute {
 =head1 SYNOPSIS
 
   cd $PROJECT;
-  dzil dumpwith -VersionProvider
+  dzil dumpwith -- -VersionProvider
 
-  dzil dumpwith -FileGatherer --color-theme=basic::plain # plain text
-  dzil dumpwith -BeforeRelease --color-theme=basic::green # green text
+  dzil dumpwith --color-theme=basic::plain -- -FileGatherer   # plain text
+  dzil dumpwith --color-theme=basic::green -- -BeforeRelease  # green text
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
@@ -181,7 +188,7 @@ At least, having this command means debugging certain kinds of problems is more 
 
 If you want to see all plugins that are adding files to your dist?
 
-    dzil dumpwith -FileGatherer
+    dzil dumpwith -- -FileGatherer
 
 Though, of course, this requires some knowledge of what roles are applicable.
 
@@ -192,6 +199,29 @@ C<ANSI_COLORS_DISABLED>. E.g.,
 
 Alternatively, specify a color-free theme:
 
-    dzil dumpwith -VersionProvider --color-theme=basic::plain
+    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
 
 =cut
+
+=head1 KNOWN ISSUES
+
+Prior to C<Dist::Zilla 6.0>, the format
+
+  dzil dumpwith -VersionProvider
+
+Was fine.
+
+However, since L<< C<Dist::Zilla 6.0>|https://metacpan.org/changes/release/RJBS/Dist-Zilla-6.000-TRIAL#L9-11 >>,
+C<Dist::Zilla> maps L<< C<-V> to C<verbose>|https://github.com/rjbs/Dist-Zilla/commit/98f9fb8b60cc645ffd401d08f3014675166ad32c#diff-99ae7353049f6c64733828dfcfe4ffdfR16 >>.
+
+To work around this problem on C<Dist::Zilla 6.0> or later, you need to either not use short-hands for roles,
+
+  # dzil dumpwith -VersionProvider
+  dzil dumpwith Dist::Zilla::Role::VersionProvider
+
+Or place all the role names (and only role names) after a C<-->
+
+  dzil dumpwith --color=... -- -VersionProvider -OtherRole --color-ThisIsAlsoARoleBTWSoDontDoThis
+
+Any suggestions welcome for how I can detect this problem case happening and report it,
+but the data appears now outside of a scope I can probe.
