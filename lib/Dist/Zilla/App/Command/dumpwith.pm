@@ -166,15 +166,15 @@ sub execute {
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/example_01.png> )
+( Everyone else can visit L<http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png> )
 
 =begin html
 
 <center>
-  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/example_01.png"
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png"
        alt="Screenshot"
-       width="806"
-       height="438"/>
+       width="740"
+       height="586"/>
 </center>
 
 =end html

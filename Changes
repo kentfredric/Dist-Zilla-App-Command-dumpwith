@@ -1,6 +1,7 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+ - Documentation: Update screenshots to reflect new notation.
 
 0.003000 2016-05-28T16:13:51Z 2b26a07
  - Add support for "--" escaping to isolate the role names to avoid complications introduced by '-V' becomming a thing
