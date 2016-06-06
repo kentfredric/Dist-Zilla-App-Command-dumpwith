@@ -8,7 +8,7 @@ is more obvious.
 
 If you want to see all plugins that are adding files to your dist?
 
-    dzil dumpwith -FileGatherer
+    dzil dumpwith -- -FileGatherer
 
 Though, of course, this requires some knowledge of what roles are
 applicable.
@@ -20,7 +20,7 @@ variable "ANSI_COLORS_DISABLED". E.g.,
 
 Alternatively, specify a color-free theme:
 
-    dzil dumpwith -VersionProvider --color-theme=basic::plain
+    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
 
 INSTALLATION
 
@@ -41,7 +41,7 @@ Should you wish to install this module manually, the procedure is
 
 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric
+This software is copyright (c) 2016 by Kent Fredric
 <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
