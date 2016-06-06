@@ -168,6 +168,8 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png> )
 
+=begin :screenshot
+
 =begin html
 
 <center>
@@ -178,6 +180,8 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 </center>
 
 =end html
+
+=end :screenshot
 
 =head1 DESCRIPTION
 

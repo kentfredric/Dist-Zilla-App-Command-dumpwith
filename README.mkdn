@@ -27,6 +27,28 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
     </center>
 </div>
 
+# DESCRIPTION
+
+This command, like its sibling [`dumpphases`](https://metacpan.org/pod/Dist::Zilla::App::Command::dumpphases), exists to help make understanding
+what is going on in `Dist::Zilla` a little easier.
+
+At least, having this command means debugging certain kinds of problems is more obvious.
+
+If you want to see all plugins that are adding files to your dist?
+
+    dzil dumpwith -- -FileGatherer
+
+Though, of course, this requires some knowledge of what roles are applicable.
+
+If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
+`ANSI_COLORS_DISABLED`. E.g.,
+
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
+
+Alternatively, specify a color-free theme:
+
+    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
+
 # KNOWN ISSUES
 
 Prior to `Dist::Zilla 6.0`, the format
@@ -49,28 +71,6 @@ Or place all the role names (and only role names) after a `--`
 
 Any suggestions welcome for how I can detect this problem case happening and report it,
 but the data appears now outside of a scope I can probe.
-
-# DESCRIPTION
-
-This command, like its sibling [`dumpphases`](https://metacpan.org/pod/Dist::Zilla::App::Command::dumpphases), exists to help make understanding
-what is going on in `Dist::Zilla` a little easier.
-
-At least, having this command means debugging certain kinds of problems is more obvious.
-
-If you want to see all plugins that are adding files to your dist?
-
-    dzil dumpwith -- -FileGatherer
-
-Though, of course, this requires some knowledge of what roles are applicable.
-
-If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
-`ANSI_COLORS_DISABLED`. E.g.,
-
-    ANSI_COLORS_DISABLED=1 dzil dumpphases
-
-Alternatively, specify a color-free theme:
-
-    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
 
 # AUTHOR
 
