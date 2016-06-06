@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.003000
+0.003001
+
+0.003000 2016-05-28T16:13:51Z
  [Added / test requires]
  - Dist::Zilla::App::Tester
  - Test::TempDir::Tiny
