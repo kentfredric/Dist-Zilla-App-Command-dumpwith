@@ -8,6 +8,10 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - English
  - Software::License::Perl_5
 
+ [Added / test requires]
+ - Dist::Zilla::App::Tester
+ - Test::TempDir::Tiny
+
  [Changed / develop requires]
  - Test::More 0.88 → 0.96
 
@@ -17,6 +21,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Removed / develop requires]
  - Dist::Zilla::Plugin::MetaYAML
+
+ [Removed / test requires]
+ - Dist::Zilla::Util::Test::KENTNL 1.005000
 
 0.002012 2015-04-15T00:35:51Z
  [Changed / test requires]
