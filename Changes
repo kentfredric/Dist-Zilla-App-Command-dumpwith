@@ -1,7 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
-0.003001 2016-06-06T21:14:51Z 03ae80b
+0.003001 2016-06-06T21:15:46Z 78c1547
  - Documentation: Update screenshots to reflect new notation.
+ - Documentation: Move KNOWN ISSUES further down.
 
 0.003000 2016-05-28T16:13:51Z 2b26a07
  - Add support for "--" escaping to isolate the role names to avoid complications introduced by '-V' becomming a thing

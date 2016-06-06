@@ -182,6 +182,35 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png> )
 
+=for html <center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png"
+       alt="Screenshot"
+       width="740"
+       height="586"/>
+</center>
+
+=head1 DESCRIPTION
+
+This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
+what is going on in C<Dist::Zilla> a little easier.
+
+At least, having this command means debugging certain kinds of problems is more obvious.
+
+If you want to see all plugins that are adding files to your dist?
+
+    dzil dumpwith -- -FileGatherer
+
+Though, of course, this requires some knowledge of what roles are applicable.
+
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
+
+Alternatively, specify a color-free theme:
+
+    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -192,13 +221,6 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 
 =end MetaPOD::JSON
-
-=for html <center>
-  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpwith/0.003000/example_01.png"
-       alt="Screenshot"
-       width="740"
-       height="586"/>
-</center>
 
 =head1 KNOWN ISSUES
 
@@ -222,28 +244,6 @@ Or place all the role names (and only role names) after a C<-->
 
 Any suggestions welcome for how I can detect this problem case happening and report it,
 but the data appears now outside of a scope I can probe.
-
-=head1 DESCRIPTION
-
-This command, like its sibling L<< C<dumpphases>|Dist::Zilla::App::Command::dumpphases >>, exists to help make understanding
-what is going on in C<Dist::Zilla> a little easier.
-
-At least, having this command means debugging certain kinds of problems is more obvious.
-
-If you want to see all plugins that are adding files to your dist?
-
-    dzil dumpwith -- -FileGatherer
-
-Though, of course, this requires some knowledge of what roles are applicable.
-
-If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
-
-    ANSI_COLORS_DISABLED=1 dzil dumpphases
-
-Alternatively, specify a color-free theme:
-
-    dzil dumpwith --color-theme=basic::plain -- -VersionProvider
 
 =head1 AUTHOR
 
