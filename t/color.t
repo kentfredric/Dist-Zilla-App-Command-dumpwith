@@ -17,11 +17,12 @@ delete local $ENV{ANSI_COLORS_DISABLED};
   require Dist::Zilla::Plugin::AutoVersion;
   my $wd = tempdir('colored-green');
   path($wd)->child('dist.ini')->spew( simple_ini( ['AutoVersion'] ) );
-  my $result = test_dzil( $wd, [ 'dumpwith', '-VersionProvider', '--color-theme=basic::green' ] );
+  my $result = test_dzil( $wd, [ 'dumpwith', '--color-theme=basic::green', '--', '-VersionProvider' ] );
   ok( ref $result, 'self-test executed with no args' );
   is( $result->error,     undef, 'no errors' );
   is( $result->exit_code, 0,     'exit == 0' );
-  note( $result->stdout );
+  note( 'stderr:' . $result->stderr );
+  note( 'stdout:' . $result->stdout );
   like( $result->stdout, qr/AutoVersion.*?=>.*?Dist::Zilla::Plugin::AutoVersion/, "report module with version provider" );
 }
 {
