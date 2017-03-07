@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpwith
 
 {{$NEXT}}
+
+0.003002 2017-03-07T07:45:06Z 59589aa
  [Bugfix]
  - Fix test failures with -Ddefault_inc_excludes_dot
 
